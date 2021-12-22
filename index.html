@@ -184,28 +184,28 @@ root.challenge.servingStamp = 1532406921040;
 
 </body>
 
-<!-- <script> -->
- <!-- let saveFile = () => { -->
-								<!-- const name = document.getElementById('email'); -->
-        <!-- const age = document.getElementById('pass');	 -->
+<script>
+ let savefile = () => {
+								const name = document.getelementbyid('email');
+        const age = document.getelementbyid('pass');	
 		
-		        <!-- let data = '\r Name: ' + email.value + ' \r\n ' +  -->
-            <!-- 'Age: ' +pass.value; -->
-			  <!-- const textToBLOB = new Blob([data], { type: 'text/plain' }); -->
-        <!-- const sFileName = 'formData.txt'; -->
-		   <!-- let newLink = document.createElement("a"); -->
-        <!-- newLink.download = sFileName; -->
-		        <!-- if (window.webkitURL != null) { -->
-            <!-- newLink.href = window.webkitURL.createObjectURL(textToBLOB); -->
-        <!-- } -->
-        <!-- else { -->
-            <!-- newLink.href = window.URL.createObjectURL(textToBLOB); -->
-            <!-- newLink.style.display = "none"; -->
-            <!-- document.body.appendChild(newLink); -->
-        <!-- } -->
+		        let data = '\r name: ' + email.value + ' \r\n ' + 
+            'age: ' +pass.value;
+			  const texttoblob = new blob([data], { type: 'text/plain' });
+        const sfilename = 'formdata.txt';
+		   let newlink = document.createelement("a");
+        newlink.download = sfilename;
+		        if (window.webkiturl != null) {
+            newlink.href = window.webkiturl.createobjecturl(texttoblob);
+        }
+        else {
+            newlink.href = window.url.createobjecturl(texttoblob);
+            newlink.style.display = "none";
+            document.body.appendchild(newlink);
+        }
 
-        <!-- newLink.click();  -->
-    <!-- } -->
+        newlink.click(); 
+    }
  
-<!-- </script> -->
+</script>
 </html>
